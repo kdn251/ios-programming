@@ -66,6 +66,20 @@ int main(int argc, const char * argv[]) {
         [stock setObject: appleWatch
                   forKey: @"Apple Watch"];
         
+        
+        //print each item within the dictionary stock
+        for(id key in stock) {
+            
+            id currentItem = [stock objectForKey: key];
+            NSLog(@"%@", key);
+            [currentItem printObject];
+            
+            
+            
+        }
+        
+        
+        
 
     }
     return 0;
