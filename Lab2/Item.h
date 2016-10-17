@@ -13,6 +13,8 @@
 
 @interface Item : NSObject {
     
+    
+    
     //name attribute
     NSString *name;
     
@@ -35,6 +37,11 @@
     UIImage *productImage;
     
 }
+
+@property (strong, nonatomic) NSString *recordAddedName;
+@property (strong, nonatomic) NSString *recordAddedDescription;
+@property (strong, nonatomic) NSString *recordAddedCost;
+@property (strong, nonatomic) NSString *recordAddedNumberOfItems;
 
 //getter for name
 -(NSString *) getName;

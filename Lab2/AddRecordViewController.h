@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 @interface AddRecordViewController : UIViewController
+
+@property (strong, nonatomic)   Item *item;
 
 @end

@@ -10,8 +10,11 @@
 #import <Foundation/Foundation.h>
 #import "Item.h"
 #import "ViewController.h"
+#import "AddRecordViewController.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) Item *item;
 
 //declare next, back, and add record buttons
 @property (weak, nonatomic) IBOutlet UIButton *nextButton;
@@ -35,6 +38,37 @@ static int arrayIndex = 0;
 
 @implementation ViewController
 
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    AddRecordViewController *addRecordVC = segue.destinationViewController;
+    addRecordVC.item= self.item;
+    
+    
+    
+}
+
+-(IBAction)completeAddRecord:(UIStoryboardSegue *) segue {
+    
+    NSLog(@"completeSignIn: in ViewController");
+    
+    Item *newItem = [[Item alloc] init];
+    
+    [newItem setName: @"Item is not yet available!"];
+        
+    [newItem setDescription: @"Item is not yet available!"];
+    
+    [newItem setCost: [self.item.recordAddedCost integerValue]];
+    
+    [newItem setNumberOfItems: 0];
+    
+    [newItem setImagePath: @"imagenotavailable.png"];
+    
+    [items addObject: newItem];
+    
+    [self dismissViewControllerAnimated: YES completion: nil];
+    
+}
 
 - (IBAction)incrementTapped:(UIButton *)sender {
     
@@ -108,7 +142,7 @@ static int arrayIndex = 0;
     
     //if we are not at the last element of the items array
     if(arrayIndex != [items count] - 1) {
-                
+                        
         //increment array index
         arrayIndex++;
         if(arrayIndex == [items count] -1) {

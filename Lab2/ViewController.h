@@ -13,4 +13,5 @@
 
 @end
 
+//declare items array
 static NSMutableArray *items;
