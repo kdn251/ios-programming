@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 @property (weak, nonatomic) IBOutlet UITextField *costField;
 @property (weak, nonatomic) IBOutlet UITextField *stockField;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 
 
@@ -25,6 +26,8 @@
 
 //declare array to hold all items
 static NSMutableArray *items;
+
+//keep track of index of array of items
 static int arrayIndex = 0;
 
 @implementation ViewController
@@ -80,15 +83,18 @@ static int arrayIndex = 0;
     self.descriptionField.text = [currentObject getDescription];
     self.costField.text = [NSString stringWithFormat: @"%.2f", [currentObject getCost]];
     self.stockField.text = [NSString stringWithFormat: @"%d", [currentObject getNumberOfItems]];
+    _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: [[items objectAtIndex: arrayIndex] getImagePath]]];
+    _imageView.frame = CGRectMake(45, 90, 275, 145);
+    [self.view addSubview: _imageView];
     
 }
 
 - (IBAction)nextTapped:(UIButton *)sender {
     
-    //if we are not at the first element of the items array
-    if(arrayIndex != sizeof(items)) {
+    //if we are not at the last element of the items array
+    if(arrayIndex != [items count] - 1) {
         
-        //decrement array index
+        //increment array index
         arrayIndex++;
         
     }
@@ -101,8 +107,9 @@ static int arrayIndex = 0;
     self.descriptionField.text = [currentObject getDescription];
     self.costField.text = [NSString stringWithFormat: @"%.2f", [currentObject getCost]];
     self.stockField.text = [NSString stringWithFormat: @"%d", [currentObject getNumberOfItems]];
-    
-    
+    _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: [[items objectAtIndex: arrayIndex] getImagePath]]];
+    _imageView.frame = CGRectMake(45, 90, 275, 145);
+    [self.view addSubview: _imageView];
     
 }
 
@@ -121,10 +128,10 @@ static int arrayIndex = 0;
     [iphone setDescription: @"Apple's newest iPhone"];
     [iphone setCost: 1000];
     [iphone setNumberOfItems: 100];
+    [iphone setImagePath: @"iphone7.png"];
     
     //add iphone item to array of items
     [items addObject: iphone];
-    
     
     //create iphone item
     Item *samsung = [[Item alloc] init];
@@ -134,14 +141,68 @@ static int arrayIndex = 0;
     [samsung setDescription: @"Samsung's newest Galaxy"];
     [samsung setCost: 750];
     [samsung setNumberOfItems: 25];
+    [samsung setImagePath: @"samsunggalaxys7.png"];
+
     
     //add samsung item to array of items
     [items addObject: samsung];
     
+    //create apple watch item
+    Item *appleWatch = [[Item alloc] init];
+    
+    //initialize apple watch item attributes
+    [appleWatch setName: @"Apple Watch 2"];
+    [appleWatch setDescription: @"Apple's newest watch"];
+    [appleWatch setCost: 550];
+    [appleWatch setNumberOfItems: 10];
+    [appleWatch setImagePath: @"applewatch2.png"];
+
+    
+    //add apple watch item to array of items
+    [items addObject: appleWatch];
+    
+    
+    //create apple watch item
+    Item *xboxOne = [[Item alloc] init];
+    
+    //initialize apple watch item attributes
+    [xboxOne setName: @"Xbox One"];
+    [xboxOne setDescription: @"Microsoft's newest console"];
+    [xboxOne setCost: 450];
+    [xboxOne setNumberOfItems: 30];
+    [xboxOne setImagePath: @"xboxone.png"];
+
+    
+    //add apple watch item to array of items
+    [items addObject: xboxOne];
+    
+    //create apple watch item
+    Item *ps4 = [[Item alloc] init];
+    
+    //initialize apple watch item attributes
+    [ps4 setName: @"PlayStation 4"];
+    [ps4 setDescription: @"Sony's newest console"];
+    [ps4 setCost: 450];
+    [ps4 setNumberOfItems: 15];
+    [ps4 setImagePath: @"ps4.png"];
+
+    
+    //add apple watch item to array of items
+    [items addObject: ps4];
+    
+    
+    //initialize fields with first item's attributes
     self.productField.text = [items.firstObject getName];
     self.descriptionField.text = [items.firstObject getDescription];
     self.costField.text = [NSString stringWithFormat: @"%.2f",[items.firstObject getCost] ];
     self.stockField.text = [NSString stringWithFormat: @"%d", [items.firstObject getNumberOfItems]];
+    
+    
+    //initialize iphone image
+    _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: [[items objectAtIndex: arrayIndex] getImagePath]]];
+    _imageView.frame = CGRectMake(45, 90, 275, 145);
+    [self.view addSubview: _imageView];
+    
 }
 
 

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UITextView.h>
+
 
 
 @interface Item : NSObject {
@@ -20,8 +22,17 @@
     //cost attribute
     float cost;
     
-    //number of items
+    //number of items attribute
     int numberOfItems;
+    
+    //image path attribute
+    NSString *imagePath;
+
+    //image view attribute
+    UIImageView *imageView;
+    
+    //image attribute
+    UIImage *productImage;
     
 }
 
@@ -37,6 +48,15 @@
 //getter for stock
 -(int) getNumberOfItems;
 
+//getter for image path
+-(NSString *) getImagePath;
+
+//getter for image view
+-(UIImageView *) getImageView;
+
+//getter for image
+-(UIImage *) getImage;
+
 //setter for name
 -(void) setName: (NSString *) newName;
 
@@ -49,9 +69,14 @@
 //setter for stock
 -(void) setNumberOfItems: (int) newNumberOfItems;
 
+//setter for image path
+-(void) setImagePath: (NSString *) newImagePath;
+
+//setter for image
+-(void) setImageView: (NSString *) imagePath;
+
 //declare printObject function
 -(void) printObject;
-
 
 
 @end

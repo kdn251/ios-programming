@@ -15,6 +15,11 @@
 		C736DCE61DAFFAD8006074F6 /* iOS_Programming_Assignment_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C736DCE51DAFFAD8006074F6 /* iOS_Programming_Assignment_2Tests.m */; };
 		C736DCF11DAFFAD8006074F6 /* iOS_Programming_Assignment_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C736DCF01DAFFAD8006074F6 /* iOS_Programming_Assignment_2UITests.m */; };
 		C75B95271DB2E10D00F8E269 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C75B95261DB2E10D00F8E269 /* AppDelegate.m */; };
+		C7CAA8741DB42C42007C84B7 /* applewatch2.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CAA8731DB42C42007C84B7 /* applewatch2.png */; };
+		C7CAA8781DB42CC1007C84B7 /* samsunggalaxys7.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CAA8771DB42CC1007C84B7 /* samsunggalaxys7.png */; };
+		C7CAA87A1DB42D04007C84B7 /* iphone7.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CAA8791DB42D04007C84B7 /* iphone7.png */; };
+		C7CAA8801DB42DBE007C84B7 /* xboxone.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CAA87F1DB42DBE007C84B7 /* xboxone.png */; };
+		C7CAA8821DB42E53007C84B7 /* ps4.png in Resources */ = {isa = PBXBuildFile; fileRef = C7CAA8811DB42E53007C84B7 /* ps4.png */; };
 		C7E6136A1DB13F700097C8C2 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E613691DB13F700097C8C2 /* Item.m */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,11 @@
 		C736DCF21DAFFAD8006074F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C75B95251DB2E10D00F8E269 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C75B95261DB2E10D00F8E269 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C7CAA8731DB42C42007C84B7 /* applewatch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = applewatch2.png; sourceTree = "<group>"; };
+		C7CAA8771DB42CC1007C84B7 /* samsunggalaxys7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = samsunggalaxys7.png; sourceTree = "<group>"; };
+		C7CAA8791DB42D04007C84B7 /* iphone7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone7.png; sourceTree = "<group>"; };
+		C7CAA87F1DB42DBE007C84B7 /* xboxone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xboxone.png; sourceTree = "<group>"; };
+		C7CAA8811DB42E53007C84B7 /* ps4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ps4.png; sourceTree = "<group>"; };
 		C7E613681DB13F700097C8C2 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
 		C7E613691DB13F700097C8C2 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +114,11 @@
 		C736DCCA1DAFFAD8006074F6 /* iOS Programming Assignment 2 */ = {
 			isa = PBXGroup;
 			children = (
+				C7CAA8811DB42E53007C84B7 /* ps4.png */,
+				C7CAA87F1DB42DBE007C84B7 /* xboxone.png */,
+				C7CAA8791DB42D04007C84B7 /* iphone7.png */,
+				C7CAA8771DB42CC1007C84B7 /* samsunggalaxys7.png */,
+				C7CAA8731DB42C42007C84B7 /* applewatch2.png */,
 				C7E613681DB13F700097C8C2 /* Item.h */,
 				C7E613691DB13F700097C8C2 /* Item.m */,
 				C75B95251DB2E10D00F8E269 /* AppDelegate.h */,
@@ -252,7 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C736DCDB1DAFFAD8006074F6 /* LaunchScreen.storyboard in Resources */,
+				C7CAA8821DB42E53007C84B7 /* ps4.png in Resources */,
+				C7CAA8801DB42DBE007C84B7 /* xboxone.png in Resources */,
+				C7CAA8741DB42C42007C84B7 /* applewatch2.png in Resources */,
+				C7CAA8781DB42CC1007C84B7 /* samsunggalaxys7.png in Resources */,
 				C736DCD81DAFFAD8006074F6 /* Assets.xcassets in Resources */,
+				C7CAA87A1DB42D04007C84B7 /* iphone7.png in Resources */,
 				C736DCD61DAFFAD8006074F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

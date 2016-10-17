@@ -9,6 +9,9 @@
 
 #import <Foundation/Foundation.h>
 #import "Item.h"
+#import <UIKit/UIImage.h>
+#import <UIKit/UIImageView.h>
+
 
 @implementation Item: NSObject
 
@@ -49,6 +52,27 @@ int numberOfItems;
     
 }
 
+//getter for image path
+-(NSString *) getImagePath {
+    
+    return imagePath;
+    
+}
+
+//getter for image view
+-(UIImageView *) getImageView {
+    
+    return imageView;
+    
+}
+
+//getter for image
+-(UIImage *) getImage {
+    
+    return productImage;
+    
+}
+
 //setter for name
 -(void) setName: (NSString *) newName {
     
@@ -74,6 +98,20 @@ int numberOfItems;
 -(void) setNumberOfItems: (int) newNumberOfItems {
     
     numberOfItems = newNumberOfItems;
+    
+}
+
+//setter for image path
+-(void) setImagePath: (NSString *)newImagePath {
+    
+     imagePath = newImagePath;
+}
+
+//setter for image
+-(void) setImageView: (NSString *)imagePath {
+    
+    imageView = [[UIImageView alloc] init];
+
     
 }
 
