@@ -9,8 +9,14 @@
 #import "ViewController.h"
 #import <Foundation/Foundation.h>
 #import "Item.h"
+#import "ViewController.h"
 
 @interface ViewController ()
+
+//declare next, back, and add record buttons
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIButton *addRecord;
 
 //declare text fields for each entry
 @property (weak, nonatomic) IBOutlet UITextField *productField;
@@ -19,13 +25,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *stockField;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
-
-
-
 @end
 
 //declare array to hold all items
-static NSMutableArray *items;
+//static NSMutableArray *items;
 
 //keep track of index of array of items
 static int arrayIndex = 0;
@@ -72,6 +75,18 @@ static int arrayIndex = 0;
         
         //decrement array index
         arrayIndex--;
+        if(arrayIndex == 0) {
+            
+            self.backButton.backgroundColor = [UIColor redColor];
+            
+        }
+        
+        //set next button's background color to black
+        if(arrayIndex != [items count] - 1) {
+            
+            self.nextButton.backgroundColor = [UIColor blackColor];
+            
+        }
         
     }
     
@@ -93,9 +108,27 @@ static int arrayIndex = 0;
     
     //if we are not at the last element of the items array
     if(arrayIndex != [items count] - 1) {
-        
+                
         //increment array index
         arrayIndex++;
+        if(arrayIndex == [items count] -1) {
+            
+            self.nextButton.backgroundColor = [UIColor redColor];
+            
+        }
+        
+        //set back button's text color to black
+        if(arrayIndex != 0) {
+            
+            self.backButton.backgroundColor = [UIColor blackColor];
+            
+        }
+        
+//        else {
+//            
+//            self.nextButton.backgroundColor = [UIColor blackColor];
+//            
+//        }
         
     }
     
@@ -197,6 +230,8 @@ static int arrayIndex = 0;
     self.costField.text = [NSString stringWithFormat: @"%.2f",[items.firstObject getCost] ];
     self.stockField.text = [NSString stringWithFormat: @"%d", [items.firstObject getNumberOfItems]];
     
+    //set back button's background color to red
+    self.backButton.backgroundColor = [UIColor redColor];
     
     //initialize iphone image
     _imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: [[items objectAtIndex: arrayIndex] getImagePath]]];
