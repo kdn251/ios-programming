@@ -30,9 +30,6 @@
 
 @end
 
-//declare array to hold all items
-//static NSMutableArray *items;
-
 //keep track of index of array of items
 static int arrayIndex = 0;
 
@@ -41,32 +38,17 @@ static int arrayIndex = 0;
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    //initialize view controller
     AddRecordViewController *addRecordVC = segue.destinationViewController;
-    addRecordVC.item= self.item;
+    
+    //set reference to original items array
+    addRecordVC.addRecordArray = items;
     
     
     
 }
 
 -(IBAction)completeAddRecord:(UIStoryboardSegue *) segue {
-    
-    NSLog(@"completeSignIn: in ViewController");
-    
-    Item *newItem = [[Item alloc] init];
-    
-    [newItem setName: @"Item is not yet available!"];
-        
-    [newItem setDescription: @"Item is not yet available!"];
-    
-    [newItem setCost: [self.item.recordAddedCost integerValue]];
-    
-    [newItem setNumberOfItems: 0];
-    
-    [newItem setImagePath: @"imagenotavailable.png"];
-    
-    [items addObject: newItem];
-    
-    [self dismissViewControllerAnimated: YES completion: nil];
     
 }
 
@@ -157,12 +139,6 @@ static int arrayIndex = 0;
             self.backButton.backgroundColor = [UIColor blackColor];
             
         }
-        
-//        else {
-//            
-//            self.nextButton.backgroundColor = [UIColor blackColor];
-//            
-//        }
         
     }
     

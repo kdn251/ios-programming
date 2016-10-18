@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *add;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 
+//declare text fields
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 @property (weak, nonatomic) IBOutlet UITextField *costField;
@@ -30,22 +31,7 @@
 
 - (IBAction)addTapped:(UIButton *)sender {
     
-    NSLog(@"KEVIN");
-        
-    Item *newItem = [[Item alloc] init];
-    
-    [newItem setName: self.item.recordAddedName];
-    
-    [newItem setDescription: self.descriptionField.text];
-
-    [newItem setCost: [self.costField.text integerValue]];
-    
-    [newItem setNumberOfItems: 3]; //[self.stockField.text integerValue]];
-    
-    [newItem setImagePath: @"imagenotavailable.png"];
-    
-    [items addObject: newItem];
-        
+    //pop stack frame to previous view
     [self dismissViewControllerAnimated: YES completion: nil];
 
 
@@ -74,65 +60,19 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    //initialize new item
+    Item *newItem = [[Item alloc] init];
     
-//    NSLog(@"KEVIN");
-//    
-//    NSLog(@"KEVIN");
-//    
-//    Item *newItem = [[Item alloc] init];
-//    
-//    [newItem setName: self.nameField.text];
-//    
-//    [newItem setDescription: self.descriptionField.text];
-//    
-//    [newItem setCost: [self.costField.text integerValue]];
-//    
-//    [newItem setNumberOfItems: [self.stockField.text integerValue]];
-//    
-//    [newItem setImagePath: @"imagenotavailable.png"];
-//    
-//    [items addObject: newItem];
-//    
-//    [self dismissViewControllerAnimated: YES completion: nil];
-
+    //initialize attributes of new item
+    [newItem setName: self.nameField.text];
+    [newItem setDescription: self.descriptionField.text];
+    [newItem setCost: [self.costField.text integerValue]];
+    [newItem setNumberOfItems: [self.stockField.text integerValue]];
+    [newItem setImagePath: @"imagenotavailable.png"];
     
-    if ([segue.identifier isEqualToString:@"completeAddRecord"]) {
-        
-        self.item.recordAddedName = self.nameField.text;
-        
-        NSLog(@"KEVINNN");
-//
-//        Item *newItem = [[Item alloc] init];
-//        
-//        [newItem setName: self.nameField.text];
-//        
-//        [newItem setDescription: self.descriptionField.text];
-//        
-//        [newItem setCost: [self.costField.text integerValue]];
-//        
-//        [newItem setNumberOfItems: 2939];
-//        
-//        [newItem setImagePath: @"imagenotavailable.png"];
-//        
-//        self.item.recordAddedName = self.nameField.text;
-//        
-//        self.item.recordAddedDescription = self.descriptionField.text;
-//        
-//        //int costOfAddedItem = [[self.costField.text] integerValue];
-//
-//        //self.item.recordAddedCost = costOfAddedItem;
-//        
-//        [self.item setNumberOfItems: [self.descriptionField.text integerValue]];
-//        
-//        [newItem setImagePath: @"imagenotavailable.png"];
-//        
-//        [items addObject: newItem];
-//        
-//        [self dismissViewControllerAnimated: YES completion: nil];
-        
-    }
-    
-    
+    //add the new item to the array of items
+    [_addRecordArray addObject: newItem];
+   
 }
 
 /*

@@ -11,6 +11,9 @@
 
 @interface AddRecordViewController : UIViewController
 
+//declare attributse
 @property (strong, nonatomic)   Item *item;
+@property (strong, nonatomic) NSMutableArray *addRecordArray;
+
 
 @end

@@ -38,6 +38,7 @@
     
 }
 
+//declare attributes
 @property (strong, nonatomic) NSString *recordAddedName;
 @property (strong, nonatomic) NSString *recordAddedDescription;
 @property (strong, nonatomic) NSString *recordAddedCost;
